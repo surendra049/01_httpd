@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 FROM registry.access.redhat.com/ubi8/ubi:8.1
 
 RUN yum --disableplugin=subscription-manager -y install httpd \
@@ -18,20 +17,3 @@ RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
 EXPOSE 8080
 USER root
 CMD httpd -D FOREGROUND
-=======
-# Install the base requirements for the app.
-# This stage is to support development.
-FROM python:alpine AS base
-RUN mkdir /opt/surendra
-WORKDIR /opt/surendra
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-FROM httpd as webserver
-USER root
-RUN mkdir /opt/surendra
-WORKDIR /opt/surendra
-#COPY requirements.txt .
-#RUN pip install -r requirements.txt
-EXPOSE 8080
->>>>>>> 0271a907c3a1275dfb401c0a5f0aa190fad02bd7
