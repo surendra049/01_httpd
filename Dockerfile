@@ -14,6 +14,6 @@ RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
   && chgrp -R 0 /var/log/httpd /var/run/httpd \
   && chmod -R g=u /var/log/httpd /var/run/httpd  
   
-EXPOSE 8080
+EXPOSE 8080 8081
 USER root
 CMD httpd -D FOREGROUND
