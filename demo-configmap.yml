@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap
+data:
+	dockerUser: 'surendra049@gmail.com'
+	dockerPass: 'maruthi049'
